@@ -169,6 +169,25 @@
     .tm-cta:hover { box-shadow: 0 0 0 4px rgba(17,155,132,.35); }
   }
 
+  /* ───────────── 原点となる素材 ───────────── */
+  .origin-hero { display: flex; justify-content: center; margin: 6px auto 4px; }
+  .origin-hero svg { width: clamp(180px, 32vw, 260px); height: auto; }
+  .origin-features {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+    max-width: 880px; margin: 26px auto 0;
+  }
+  .ofeature {
+    display: flex; flex-direction: column; align-items: center; text-align: center; gap: 14px;
+    background: var(--paper); border: 1px solid var(--line); border-radius: 16px;
+    padding: 26px 20px; box-shadow: var(--shadow);
+  }
+  .ofeature .oicon { width: 128px; height: 96px; }
+  .ofeature .oicon svg { width: 100%; height: 100%; display: block; }
+  .ofeature .olabel { font-size: 15px; font-weight: 800; color: var(--teal-700); line-height: 1.5; }
+  @media (max-width: 720px) {
+    .origin-features { grid-template-columns: 1fr; max-width: 380px; }
+  }
+
   /* ───────────── 事業戦略 ───────────── */
   .strategy-title { text-align: center; margin-bottom: 8px; }
   .strategy-sub { text-align: center; color: var(--ink-500); font-size: 14px; margin-bottom: 44px; }
@@ -384,6 +403,87 @@
     <div class="top-message">
       <img src="images/top-message.jpg" alt="トップメッセージ｜サイエンスの力で、人と地球を健康にする。" width="1024" height="434">
       <a class="tm-cta" href="#" aria-label="トップメッセージ 詳しくはこちら"></a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ 原点となる素材 ═══════════ -->
+<section id="origin">
+  <div class="wrap">
+    <div class="sec-head" style="text-align:center">
+      <span class="kicker" style="color: var(--teal-700)">About Euglena</span>
+      <h2 class="sec-title" style="text-align:center">原点となる素材“ユーグレナ”について</h2>
+    </div>
+
+    <div class="origin-hero">
+      <svg viewBox="0 0 240 240" role="img" aria-label="微細藻類ユーグレナのイメージ">
+        <defs>
+          <radialGradient id="ogBg" cx="50%" cy="44%" r="62%">
+            <stop offset="0" stop-color="#eef9e3"/><stop offset="1" stop-color="#ddf2e6"/>
+          </radialGradient>
+          <linearGradient id="ogCell" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#9ad86f"/><stop offset="1" stop-color="#119b84"/>
+          </linearGradient>
+        </defs>
+        <circle cx="120" cy="120" r="108" fill="url(#ogBg)"/>
+        <path d="M120 58 C150 82 150 168 120 192 C90 168 90 82 120 58 Z" fill="url(#ogCell)"/>
+        <path d="M120 58 C116 40 132 28 150 34" fill="none" stroke="#119b84" stroke-width="5" stroke-linecap="round"/>
+        <circle cx="126" cy="80" r="6" fill="#ec6a8f"/>
+        <circle cx="110" cy="104" r="5" fill="#ffffff" opacity=".85"/>
+        <circle cx="130" cy="124" r="6" fill="#ffffff" opacity=".85"/>
+        <circle cx="112" cy="150" r="5" fill="#ffffff" opacity=".85"/>
+        <circle cx="128" cy="166" r="4" fill="#ffffff" opacity=".85"/>
+      </svg>
+    </div>
+
+    <div class="origin-features">
+      <div class="ofeature">
+        <div class="oicon">
+          <svg viewBox="0 0 120 100" role="img" aria-label="光合成で育つイメージ">
+            <circle cx="60" cy="14" r="5" fill="#cde89a"/>
+            <circle cx="40" cy="22" r="3.5" fill="#dcefb6"/>
+            <circle cx="82" cy="20" r="3.5" fill="#dcefb6"/>
+            <path d="M34 44 C44 50 44 78 34 84 C24 78 24 50 34 44 Z" fill="#6bbf59"/>
+            <path d="M34 44 C32 36 40 32 47 35" fill="none" stroke="#6bbf59" stroke-width="3" stroke-linecap="round"/>
+            <path d="M62 52 C72 58 72 86 62 92 C52 86 52 58 62 52 Z" fill="#119b84"/>
+            <path d="M62 52 C60 44 68 40 75 43" fill="none" stroke="#119b84" stroke-width="3" stroke-linecap="round"/>
+            <path d="M90 46 C99 52 99 78 90 84 C81 78 81 52 90 46 Z" fill="#4fc0ab"/>
+            <path d="M90 46 C88 38 96 34 102 37" fill="none" stroke="#4fc0ab" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <p class="olabel">光合成で育つ動植物</p>
+      </div>
+      <div class="ofeature">
+        <div class="oicon">
+          <svg viewBox="0 0 120 100" role="img" aria-label="栄養素のイメージ">
+            <path d="M46 30 C40 16 58 8 70 14 C66 30 54 36 46 30 Z" fill="#6bbf59"/>
+            <path d="M48 29 C56 24 62 20 68 16" fill="none" stroke="#3f8f49" stroke-width="2"/>
+            <circle cx="40" cy="46" r="11" fill="#ec8fb0"/>
+            <circle cx="62" cy="42" r="13" fill="#119b84"/>
+            <circle cx="82" cy="48" r="10" fill="#9ad86f"/>
+            <path d="M26 56 L94 56 A34 34 0 0 1 26 56 Z" fill="#4fc0ab"/>
+            <ellipse cx="60" cy="56" rx="34" ry="7" fill="#b7e6dd"/>
+          </svg>
+        </div>
+        <p class="olabel">動物と植物の栄養素59種類！</p>
+      </div>
+      <div class="ofeature">
+        <div class="oicon">
+          <svg viewBox="0 0 120 100" role="img" aria-label="特有成分パラミロンのイメージ">
+            <defs>
+              <radialGradient id="ogGran" cx="38%" cy="34%" r="72%">
+                <stop offset="0" stop-color="#bfe88f"/><stop offset="1" stop-color="#2a9a6f"/>
+              </radialGradient>
+            </defs>
+            <circle cx="46" cy="54" r="26" fill="url(#ogGran)"/>
+            <circle cx="80" cy="46" r="19" fill="url(#ogGran)"/>
+            <circle cx="64" cy="76" r="15" fill="url(#ogGran)"/>
+            <circle cx="30" cy="80" r="11" fill="url(#ogGran)"/>
+            <circle cx="92" cy="72" r="11" fill="url(#ogGran)"/>
+          </svg>
+        </div>
+        <p class="olabel">特有成分パラミロン</p>
+      </div>
     </div>
   </div>
 </section>
