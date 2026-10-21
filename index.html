@@ -118,23 +118,11 @@
   }
   .hero-inner { max-width: var(--maxw); margin: 0 auto;
     padding: 56px max(24px, env(safe-area-inset-right, 0px)) 40px max(24px, env(safe-area-inset-left, 0px)); }
-  .hero-head { position: relative; display: inline-block; }
-  .hero-head .layer {
-    font-family: var(--font-sans); font-weight: 900;
-    font-size: clamp(40px, 10.5vw, 104px); line-height: 1.06; letter-spacing: .01em;
-    display: block; white-space: nowrap;
+  .hero-head { position: relative; display: block; margin: 0; max-width: 920px; }
+  .hero-head img {
+    width: 100%; height: auto; display: block; border-radius: 16px;
+    box-shadow: 0 18px 46px rgba(17,155,132,.18);
   }
-  .hero-head .teal { color: var(--teal); position: relative; z-index: 2; }
-  .hero-head .pink {
-    color: var(--pink); position: absolute; inset: 0; z-index: 1;
-    transform: translate(.11em, .07em); opacity: .92;
-  }
-  .hero-tube {
-    position: absolute; z-index: 3; right: 8%; top: 50%; transform: translateY(-50%);
-    width: clamp(56px, 11vw, 120px); filter: drop-shadow(0 12px 24px rgba(17,155,132,.3));
-    pointer-events: none;
-  }
-  @media (max-width: 720px){ .hero-tube { right: 2%; opacity: .9; } }
 
   .hero-lead {
     margin-top: 40px; max-width: 46em; font-size: clamp(14px, 1.7vw, 16.5px);
@@ -381,23 +369,9 @@
 <!-- ═══════════ Hero ═══════════ -->
 <div class="hero">
   <div class="hero-inner">
-    <div class="hero-head" role="heading" aria-level="1" aria-label="微細藻類から、人と地球の健康を実装する。">
-      <span class="layer pink" aria-hidden="true">微細藻類から、<br>人と地球の健康<br>健康実装する。</span>
-      <span class="layer teal">微細藻類から、<br>人と地球の健康<br>健康実装する。</span>
-      <svg class="hero-tube" viewBox="0 0 80 220" aria-hidden="true">
-        <defs>
-          <linearGradient id="liq" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0" stop-color="#7bd27a"/><stop offset="1" stop-color="#119b84"/>
-          </linearGradient>
-        </defs>
-        <rect x="22" y="2" width="36" height="14" rx="4" fill="#cfe8e1"/>
-        <path d="M26 16 h28 v168 a14 14 0 0 1-28 0 Z" fill="#ffffff" stroke="#bcd9d1" stroke-width="2"/>
-        <path d="M28 96 h24 v88 a12 12 0 0 1-24 0 Z" fill="url(#liq)"/>
-        <ellipse cx="40" cy="96" rx="12" ry="4" fill="#9ad9a0"/>
-        <circle cx="36" cy="150" r="3" fill="#ffffff" opacity=".5"/>
-        <circle cx="44" cy="170" r="2" fill="#ffffff" opacity=".5"/>
-      </svg>
-    </div>
+    <h1 class="hero-head">
+      <img src="images/hero.jpg" alt="微細藻類から、人と地球の健康を実装する。" width="1024" height="572">
+    </h1>
 
     <p class="hero-lead">
       2005年、私たちは世界で初めて、微細藻類ユーグレナ（和名：ミドリムシ）の食用屋外大量培養に成功しました。
