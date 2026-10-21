@@ -236,15 +236,19 @@
   /* 関連サイトボタン */
   .related { margin-top: 44px; }
   .related .label { text-align: center; font-size: 13px; font-weight: 700; color: var(--ink-500); margin-bottom: 18px; }
-  .related-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+  .related-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 26px; }
   .rbtn {
-    background: var(--paper); border: 1px solid var(--line); border-radius: 999px;
-    padding: 16px 20px; text-align: center; box-shadow: var(--shadow);
-    display: flex; flex-direction: column; gap: 3px; transition: transform .14s, border-color .14s;
+    display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center;
   }
-  .rbtn:hover { transform: translateY(-2px); border-color: var(--teal-400); }
-  .rbtn small { font-size: 9.5px; font-weight: 700; letter-spacing: .1em; color: var(--pink); }
-  .rbtn b { font-size: 14px; font-weight: 700; color: var(--teal-900); }
+  .rbtn .cat { font-size: 11.5px; font-weight: 700; letter-spacing: .04em; color: var(--ink-800); }
+  .rbtn .pill {
+    width: 100%; background: #fff; color: var(--ink-900);
+    font-size: 15px; font-weight: 800; letter-spacing: .02em; line-height: 1.4;
+    border: 2px solid var(--teal); border-radius: 999px; padding: 15px 16px;
+    box-shadow: 0 0 0 3px #fff, 0 0 0 6px var(--pink);
+    transition: transform .14s, box-shadow .14s;
+  }
+  .rbtn:hover .pill { transform: translateY(-2px); box-shadow: 0 0 0 3px #fff, 0 0 0 7px var(--pink); }
 
   /* ───────────── 数字で見る ───────────── */
   .stat-head { display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap; margin-bottom: 26px; }
@@ -400,10 +404,10 @@
     <div class="related">
       <p class="label">詳しくはこちら</p>
       <div class="related-grid">
-        <a class="rbtn" href="#"><small>ヘルスケアカンパニー</small><b>健康 ip</b></a>
-        <a class="rbtn" href="#"><small>サステナビリティ</small><b>サステナサイト</b></a>
-        <a class="rbtn" href="#"><small>アグリカンパニー</small><b>いきものたちにユーグレナ</b></a>
-        <a class="rbtn" href="#"><small>R&amp;D</small><b>ヘルスケア・ラボ</b></a>
+        <a class="rbtn" href="#"><span class="cat">ヘルスケアカンパニー</span><span class="pill">藻活.jp</span></a>
+        <a class="rbtn" href="#"><span class="cat">エネルギーカンパニー</span><span class="pill">サステオサイト</span></a>
+        <a class="rbtn" href="#"><span class="cat">アグリカンパニー</span><span class="pill">いきものたちにユーグレナ</span></a>
+        <a class="rbtn" href="#"><span class="cat">R&amp;D</span><span class="pill">ヘルスケア・ラボ</span></a>
       </div>
     </div>
   </div>
