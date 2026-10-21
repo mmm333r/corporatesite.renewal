@@ -2,327 +2,377 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>株式会社ユーグレナ｜微細藻類から、人と地球の健康を実装する。</title>
-<meta name="description" content="ユーグレナは、微細藻類という単一の生物資源を起点に、ヘルスケア・エネルギー・アグリ・R&Dへ事業を展開する藻類科学メーカーです。研究を起点に、人と地球の健康を実装します。">
+<meta name="description" content="2005年、世界で初めて微細藻類ユーグレナの食用屋外大量培養に成功。ヘルスケア・エネルギー・アグリへ。人と地球の健康を実装する、ユーグレナのコーポレートサイト（デモ）。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@600;700&family=Cormorant+Garamond:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
+  /* Layout concept: single-column editorial top page — airy light bands,
+     a double-exposure teal/pink hero, infographic strategy + stat tiles. */
   :root {
-    --green-900: #0b2a1a;
-    --green-800: #123f27;
-    --green-700: #185233;
-    --green-600: #1e6b41;
-    --green-500: #2a8a52;
-    --green-400: #43a86a;
-    --green-300: #6fc492;
-    --green-100: #e4f3ea;
-    --green-50:  #f2faf5;
-    --lime:      #7bc043;
-    --ink-900:   #101613;
-    --ink-800:   #1d2621;
-    --ink-700:   #333f38;
-    --ink-600:   #4d5b53;
-    --ink-500:   #6b7a72;
-    --ink-300:   #b8c2bc;
-    --ink-200:   #dce3de;
-    --ink-100:   #eef2ef;
-    --paper:     #ffffff;
-    --sand:      #f6f8f5;
+    --teal-900: #0b4f44;
+    --teal-700: #0d7a68;
+    --teal:     #119b84;
+    --teal-400: #4fc0ab;
+    --teal-200: #b7e6dd;
+    --teal-50:  #eaf6f3;
+    --pink-600: #d77192;
+    --pink:     #e98aab;
+    --pink-300: #f3b9cd;
+    --pink-50:  #fcf0f5;
+    --ink-900:  #1c2420;
+    --ink-700:  #3a443e;
+    --ink-500:  #68756d;
+    --ink-300:  #aab4ae;
+    --line:     #e4ebe7;
+    --paper:    #ffffff;
+    --mist:     #f1f7f4;
+    --sand:     #f7faf8;
+    --shadow:   0 1px 2px rgba(12,54,46,.04), 0 10px 34px rgba(12,54,46,.07);
     --font-sans: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     --font-serif: 'Noto Serif JP', serif;
-    --radius: 14px;
-    --shadow: 0 1px 2px rgba(16,22,19,.04), 0 8px 28px rgba(16,22,19,.06);
-    --maxw: 1120px;
+    --font-en: 'Cormorant Garamond', 'Noto Serif JP', serif;
+    --maxw: 1140px;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --teal-900: #bfeadf; --teal-700: #5fcdb6; --teal: #43c3aa; --teal-400: #2f9e89;
+      --teal-200: #1d4c43; --teal-50: #15241f; --pink-600: #f0a6c0; --pink: #ec8fb0;
+      --pink-300: #a85c76; --pink-50: #241820;
+      --ink-900: #e9efeb; --ink-700: #c4cdc8; --ink-500: #929d97; --ink-300: #5e6a64;
+      --line: #223029; --paper: #0c1511; --mist: #111d18; --sand: #0f1a15;
+      --shadow: 0 1px 2px rgba(0,0,0,.3), 0 10px 34px rgba(0,0,0,.4);
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --teal-900: #bfeadf; --teal-700: #5fcdb6; --teal: #43c3aa; --teal-400: #2f9e89;
+    --teal-200: #1d4c43; --teal-50: #15241f; --pink-600: #f0a6c0; --pink: #ec8fb0;
+    --pink-300: #a85c76; --pink-50: #241820;
+    --ink-900: #e9efeb; --ink-700: #c4cdc8; --ink-500: #929d97; --ink-300: #5e6a64;
+    --line: #223029; --paper: #0c1511; --mist: #111d18; --sand: #0f1a15;
+    --shadow: 0 1px 2px rgba(0,0,0,.3), 0 10px 34px rgba(0,0,0,.4);
+    color-scheme: dark;
   }
 
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
   body {
-    font-family: var(--font-sans);
-    color: var(--ink-800);
-    background: var(--paper);
-    line-height: 1.85;
-    font-size: 16px;
-    letter-spacing: .01em;
-    overflow-x: hidden;
+    font-family: var(--font-sans); color: var(--ink-900); background: var(--paper);
+    line-height: 1.9; font-size: 16px; letter-spacing: .01em; overflow-x: hidden;
   }
   a { color: inherit; text-decoration: none; }
-  img { max-width: 100%; display: block; }
+  img, svg { max-width: 100%; display: block; }
+  :focus-visible { outline: 2px solid var(--teal); outline-offset: 3px; border-radius: 3px; }
 
-  .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+  .wrap { max-width: var(--maxw); margin: 0 auto;
+    padding-left: max(24px, env(safe-area-inset-left, 0px));
+    padding-right: max(24px, env(safe-area-inset-right, 0px)); }
 
-  /* ─────────── Header ─────────── */
+  /* ───────────── Header ───────────── */
   header {
-    position: sticky; top: 0; z-index: 100;
-    background: rgba(255,255,255,.86);
+    position: sticky; top: env(safe-area-inset-top, 0px); z-index: 50;
+    background: color-mix(in srgb, var(--paper) 88%, transparent);
     backdrop-filter: saturate(160%) blur(12px);
-    border-bottom: 1px solid var(--ink-100);
+    border-bottom: 1px solid var(--line);
   }
-  .nav {
-    display: flex; align-items: center; justify-content: space-between;
-    height: 68px; max-width: var(--maxw); margin: 0 auto; padding: 0 24px;
+  body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px);
+    z-index: 60; background: var(--paper); }
+  .util {
+    border-bottom: 1px solid var(--line); font-size: 12px; color: var(--ink-500);
   }
-  .brand { display: flex; align-items: center; gap: 10px; }
-  .brand-mark {
-    width: 30px; height: 30px; border-radius: 50%;
-    background: radial-gradient(circle at 32% 30%, var(--lime), var(--green-500) 60%, var(--green-700));
-    box-shadow: inset 0 0 0 3px rgba(255,255,255,.35);
-    flex: none;
+  .util .wrap { display: flex; justify-content: flex-end; align-items: center; gap: 20px; height: 34px; }
+  .util a { transition: color .15s; }
+  .util a:hover { color: var(--teal-700); }
+  .util .shop {
+    display: inline-flex; align-items: center; gap: 6px; color: #fff;
+    background: var(--pink); padding: 3px 12px; border-radius: 999px; font-weight: 700;
   }
-  .brand-name { font-weight: 900; font-size: 19px; letter-spacing: .02em; color: var(--green-800); }
-  .brand-name span { color: var(--green-500); }
-  .nav-links { display: flex; align-items: center; gap: 28px; }
-  .nav-links a { font-size: 14px; font-weight: 500; color: var(--ink-700); transition: color .15s; }
-  .nav-links a:hover { color: var(--green-600); }
+  .util .shop:hover { background: var(--pink-600); color: #fff; }
+  .nav { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+  .brand { display: flex; align-items: center; gap: 12px; }
+  .brand .logo { display: flex; align-items: baseline; gap: 4px; }
+  .brand .logo b { font-weight: 900; font-size: 22px; letter-spacing: .04em; color: var(--teal-700); }
+  .brand .inf { color: var(--pink); font-size: 18px; font-weight: 900; }
+  .brand .tag { font-size: 9.5px; letter-spacing: .14em; color: var(--ink-500); line-height: 1.3; }
+  .main-nav { display: flex; align-items: center; gap: 26px; }
+  .main-nav a { font-size: 14.5px; font-weight: 700; color: var(--ink-700); transition: color .15s; }
+  .main-nav a:hover { color: var(--teal-700); }
   .nav-cta {
-    background: var(--green-600); color: #fff !important;
-    padding: 9px 18px; border-radius: 999px; font-weight: 700; font-size: 13px;
+    background: var(--ink-900); color: var(--paper) !important; padding: 9px 18px;
+    border-radius: 8px; font-size: 13px; font-weight: 700;
   }
-  .nav-cta:hover { background: var(--green-700); }
-  .menu-btn { display: none; background: none; border: 0; font-size: 24px; color: var(--green-800); cursor: pointer; }
+  .nav-cta:hover { background: var(--teal-700); }
+  .menu-btn { display: none; background: none; border: 0; font-size: 24px; color: var(--teal-700); cursor: pointer; }
 
-  /* ─────────── Hero ─────────── */
+  /* ───────────── Hero ───────────── */
   .hero {
-    position: relative;
+    position: relative; overflow: hidden; border-bottom: 1px solid var(--line);
     background:
-      radial-gradient(900px 500px at 82% -10%, rgba(123,192,67,.20), transparent 60%),
-      radial-gradient(700px 480px at 8% 110%, rgba(30,107,65,.14), transparent 60%),
-      linear-gradient(160deg, #f4faf6 0%, #eef6f0 100%);
-    overflow: hidden;
-    border-bottom: 1px solid var(--ink-100);
+      radial-gradient(760px 520px at 88% -8%, var(--pink-50), transparent 62%),
+      radial-gradient(680px 520px at 6% 112%, var(--teal-50), transparent 60%),
+      var(--paper);
   }
-  .hero-inner { padding: 92px 24px 76px; max-width: var(--maxw); margin: 0 auto; position: relative; z-index: 2; }
-  .eyebrow {
-    display: inline-flex; align-items: center; gap: 8px;
-    font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
-    color: var(--green-600); background: var(--paper); border: 1px solid var(--green-100);
-    padding: 7px 14px; border-radius: 999px; margin-bottom: 26px;
+  .hero-inner { max-width: var(--maxw); margin: 0 auto;
+    padding: 56px max(24px, env(safe-area-inset-right, 0px)) 40px max(24px, env(safe-area-inset-left, 0px)); }
+  .hero-head { position: relative; display: inline-block; }
+  .hero-head .layer {
+    font-family: var(--font-sans); font-weight: 900;
+    font-size: clamp(40px, 10.5vw, 104px); line-height: 1.06; letter-spacing: .01em;
+    display: block; white-space: nowrap;
   }
-  .eyebrow::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--lime); }
-  .hero h1 {
-    font-family: var(--font-serif); font-weight: 700;
-    font-size: clamp(30px, 5.2vw, 56px); line-height: 1.28; color: var(--green-900);
-    letter-spacing: .01em; margin-bottom: 26px; max-width: 16em;
+  .hero-head .teal { color: var(--teal); position: relative; z-index: 2; }
+  .hero-head .pink {
+    color: var(--pink); position: absolute; inset: 0; z-index: 1;
+    transform: translate(.11em, .07em); opacity: .92;
   }
-  .hero h1 .hl {
-    background: linear-gradient(transparent 66%, rgba(123,192,67,.42) 66%);
+  .hero-tube {
+    position: absolute; z-index: 3; right: 8%; top: 50%; transform: translateY(-50%);
+    width: clamp(56px, 11vw, 120px); filter: drop-shadow(0 12px 24px rgba(17,155,132,.3));
+    pointer-events: none;
   }
-  .hero-sub {
-    font-size: clamp(16px, 2vw, 20px); font-weight: 500; color: var(--ink-700);
-    max-width: 34em; line-height: 1.9;
-  }
-  .hero-actions { margin-top: 38px; display: flex; flex-wrap: wrap; gap: 14px; }
-  .btn {
-    display: inline-flex; align-items: center; gap: 8px;
-    padding: 14px 26px; border-radius: 999px; font-weight: 700; font-size: 15px;
-    transition: transform .12s, background .15s, box-shadow .15s;
-  }
-  .btn-primary { background: var(--green-600); color: #fff; box-shadow: 0 8px 22px rgba(30,107,65,.28); }
-  .btn-primary:hover { background: var(--green-700); transform: translateY(-1px); }
-  .btn-ghost { background: var(--paper); color: var(--green-800); border: 1px solid var(--ink-200); }
-  .btn-ghost:hover { border-color: var(--green-400); color: var(--green-700); }
+  @media (max-width: 720px){ .hero-tube { right: 2%; opacity: .9; } }
 
-  /* DESTINATION flow */
-  .destination { margin-top: 66px; }
-  .destination-label {
-    font-size: 12px; font-weight: 700; letter-spacing: .18em; color: var(--green-600);
-    text-transform: uppercase; margin-bottom: 18px;
-  }
-  .flow {
-    display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px;
-  }
-  .flow-step {
-    background: var(--paper); border: 1px solid var(--ink-100); border-radius: 12px;
-    padding: 18px 16px; position: relative; box-shadow: var(--shadow);
-  }
-  .flow-step .n {
-    font-size: 11px; font-weight: 700; color: var(--green-400); letter-spacing: .1em;
-  }
-  .flow-step .t { font-weight: 700; font-size: 15px; color: var(--green-900); margin-top: 6px; }
-  .flow-step .d { font-size: 12.5px; color: var(--ink-600); line-height: 1.7; margin-top: 6px; }
-  .flow-step:not(:last-child)::after {
-    content: "→"; position: absolute; right: -11px; top: 50%; transform: translateY(-50%);
-    color: var(--green-300); font-weight: 700; font-size: 16px; z-index: 3;
+  .hero-lead {
+    margin-top: 40px; max-width: 46em; font-size: clamp(14px, 1.7vw, 16.5px);
+    color: var(--ink-700); line-height: 2.05;
   }
 
-  /* ─────────── Sections ─────────── */
-  section { padding: 88px 0; }
-  .section-head { max-width: 44em; margin-bottom: 48px; }
-  .section-kicker {
-    font-size: 12px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase;
-    color: var(--green-500); margin-bottom: 14px;
+  /* ───────────── 重要なお知らせ ───────────── */
+  .notice { background: var(--mist); border-bottom: 1px solid var(--line); }
+  .notice .wrap { display: flex; align-items: center; gap: 22px; padding-block: 16px; }
+  .notice .badge {
+    flex: none; background: var(--teal-700); color: #fff; font-size: 13px; font-weight: 700;
+    padding: 8px 18px; border-radius: 6px; letter-spacing: .04em;
   }
-  .section-title {
-    font-family: var(--font-serif); font-weight: 700;
-    font-size: clamp(24px, 3.4vw, 36px); line-height: 1.4; color: var(--green-900);
-  }
-  .section-lead { margin-top: 16px; font-size: 17px; color: var(--ink-700); line-height: 1.9; }
+  .notice ul { list-style: none; display: grid; gap: 7px; min-width: 0; }
+  .notice li { display: flex; gap: 14px; font-size: 13.5px; color: var(--ink-700); min-width: 0; }
+  .notice li .d { color: var(--ink-500); font-weight: 600; flex: none; font-variant-numeric: tabular-nums; }
+  .notice li a { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; transition: color .15s; }
+  .notice li a:hover { color: var(--teal-700); }
 
-  .sand { background: var(--sand); border-top: 1px solid var(--ink-100); border-bottom: 1px solid var(--ink-100); }
+  /* ───────────── セクション共通 ───────────── */
+  section { padding-block: 84px; }
+  .kicker {
+    display: inline-block; font-family: var(--font-en); font-style: italic; font-weight: 600;
+    font-size: 22px; letter-spacing: .02em; color: var(--pink); margin-bottom: 6px;
+  }
+  .sec-title {
+    font-family: var(--font-serif); font-weight: 700; color: var(--teal-900);
+    font-size: clamp(24px, 3.6vw, 38px); line-height: 1.4; text-wrap: balance;
+  }
+  .sec-head { margin-bottom: 44px; }
+  .mist-bg { background: var(--mist); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 
-  /* 私たちは何の会社か */
-  .definition {
-    display: grid; grid-template-columns: 1.1fr .9fr; gap: 48px; align-items: center;
+  /* ───────────── トップメッセージ ───────────── */
+  .message { display: grid; grid-template-columns: 1.05fr .95fr; gap: 0; align-items: stretch; }
+  .message .photo {
+    position: relative; min-height: 340px; border-radius: 18px 0 0 18px; overflow: hidden;
+    background:
+      radial-gradient(120% 90% at 20% 15%, rgba(255,255,255,.5), transparent 55%),
+      linear-gradient(145deg, var(--teal-200), var(--teal-50) 60%, var(--sand));
+    display: flex; align-items: flex-end; justify-content: center;
   }
-  .def-statement {
-    font-family: var(--font-serif); font-weight: 600;
-    font-size: clamp(22px, 3vw, 30px); line-height: 1.65; color: var(--green-900);
+  .message .photo .figure { width: 70%; max-width: 240px; }
+  .message .photo .ph-tag {
+    position: absolute; left: 18px; top: 18px; font-size: 11px; font-weight: 700;
+    color: var(--teal-700); background: color-mix(in srgb, var(--paper) 80%, transparent);
+    padding: 4px 10px; border-radius: 999px; letter-spacing: .04em;
   }
-  .def-statement em { font-style: normal; color: var(--green-500); }
-  .def-body { font-size: 16px; color: var(--ink-700); margin-top: 22px; line-height: 1.95; }
-  .def-card {
-    background: linear-gradient(155deg, var(--green-700), var(--green-900));
-    color: #eaf5ee; border-radius: var(--radius); padding: 34px 32px;
-    box-shadow: 0 20px 50px rgba(11,42,26,.28);
+  .message .panel {
+    position: relative; background: linear-gradient(150deg, var(--teal-700), var(--teal-900));
+    color: #eafaf5; border-radius: 0 18px 18px 0; padding: 48px 44px;
+    display: flex; flex-direction: column; justify-content: center;
   }
-  .def-card h3 { font-size: 15px; font-weight: 700; letter-spacing: .04em; color: #c9ecd5; margin-bottom: 18px; }
-  .def-card ul { list-style: none; display: grid; gap: 14px; }
-  .def-card li { display: flex; gap: 12px; font-size: 15px; line-height: 1.7; }
-  .def-card li::before { content: "●"; color: var(--lime); font-size: 10px; margin-top: 8px; }
-  .def-card .kicker { color: #fff; font-weight: 700; }
+  .message .bubble {
+    align-self: flex-start; background: var(--pink); color: #fff; font-weight: 700;
+    border-radius: 999px; padding: 10px 24px; margin-bottom: 20px; font-size: 20px; letter-spacing: .04em;
+  }
+  .message .bubble small { display: block; font-size: 10.5px; font-weight: 700; letter-spacing: .22em; opacity: .85; }
+  .message .panel p { font-size: 15.5px; line-height: 2; color: #d7f0e8; }
+  .message .panel .name { margin-top: 20px; font-size: 13px; color: #a9dccd; }
+  .message .panel .name b { color: #fff; font-size: 16px; }
+  .message .more {
+    align-self: flex-start; margin-top: 28px; display: inline-flex; align-items: center; gap: 10px;
+    background: var(--paper); color: var(--teal-900); font-weight: 700; font-size: 14px;
+    padding: 13px 28px; border-radius: 999px; transition: transform .14s;
+  }
+  .message .more:hover { transform: translateY(-2px); }
 
-  /* どうやって事業が増えるのか */
-  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 8px; }
-  .step {
-    background: var(--paper); border: 1px solid var(--ink-100); border-radius: var(--radius);
-    padding: 30px 28px; position: relative; box-shadow: var(--shadow);
+  /* ───────────── 事業戦略 ───────────── */
+  .strategy-title { text-align: center; margin-bottom: 8px; }
+  .strategy-sub { text-align: center; color: var(--ink-500); font-size: 14px; margin-bottom: 44px; }
+  .strategy { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .scard {
+    background: var(--paper); border: 1px solid var(--line); border-radius: 16px;
+    padding: 28px 26px; box-shadow: var(--shadow); display: flex; flex-direction: column;
   }
-  .step-num {
-    display: inline-flex; align-items: center; justify-content: center;
-    width: 44px; height: 44px; border-radius: 12px;
-    background: var(--green-100); color: var(--green-700);
-    font-weight: 900; font-size: 18px; margin-bottom: 18px;
+  .scard .no {
+    display: inline-flex; align-items: center; gap: 10px; font-weight: 900; color: var(--teal-700);
+    font-size: 13px; letter-spacing: .1em; margin-bottom: 4px;
   }
-  .step h3 { font-size: 19px; font-weight: 700; color: var(--green-900); margin-bottom: 10px; }
-  .step p { font-size: 15px; color: var(--ink-700); line-height: 1.85; }
-  .step .tag { display: inline-block; margin-top: 16px; font-size: 12px; font-weight: 700; color: var(--green-500); letter-spacing: .06em; }
-  .cycle-note {
-    margin-top: 30px; text-align: center; font-size: 14.5px; color: var(--ink-600);
-    background: var(--green-50); border: 1px dashed var(--green-300); border-radius: 12px; padding: 16px;
+  .scard .no b {
+    width: 26px; height: 26px; border-radius: 50%; background: var(--teal-50); color: var(--teal-700);
+    display: grid; place-items: center; font-size: 14px; font-family: var(--font-serif);
   }
-  .cycle-note strong { color: var(--green-700); }
+  .scard h3 { font-size: 18px; font-weight: 700; color: var(--teal-900); margin-bottom: 16px; }
+  .scard p.lead { font-size: 13px; color: var(--ink-500); margin-bottom: 18px; line-height: 1.8; }
 
-  /* 4つの実装領域 */
-  .domains { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
-  .domain {
-    border: 1px solid var(--ink-100); border-radius: var(--radius); padding: 30px 30px 28px;
-    background: var(--paper); transition: transform .16s, box-shadow .16s, border-color .16s;
-    position: relative; overflow: hidden;
+  /* 1 サイクル */
+  .cycle { display: flex; flex-direction: column; align-items: center; gap: 14px; margin-top: auto; }
+  .cycle .ring {
+    width: 128px; height: 128px; border-radius: 50%; position: relative;
+    background: conic-gradient(var(--teal-400), var(--teal), var(--pink), var(--teal-400));
+    display: grid; place-items: center;
   }
-  .domain:hover { transform: translateY(-3px); box-shadow: var(--shadow); border-color: var(--green-300); }
-  .domain::before {
-    content: ""; position: absolute; inset: 0 auto 0 0; width: 5px;
-    background: linear-gradient(var(--green-400), var(--green-600));
+  .cycle .ring::before {
+    content: ""; position: absolute; inset: 14px; border-radius: 50%; background: var(--paper);
   }
-  .domain .ic { font-size: 30px; margin-bottom: 14px; }
-  .domain h3 { font-size: 21px; font-weight: 700; color: var(--green-900); }
-  .domain .en { font-size: 12px; font-weight: 700; letter-spacing: .12em; color: var(--green-400); text-transform: uppercase; margin-bottom: 12px; }
-  .domain p { font-size: 15px; color: var(--ink-700); line-height: 1.85; margin-top: 6px; }
-  .domain ul { margin-top: 14px; padding-left: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 8px; }
-  .domain li { font-size: 12.5px; font-weight: 500; color: var(--green-700); background: var(--green-50); border: 1px solid var(--green-100); border-radius: 999px; padding: 4px 12px; }
+  .cycle .ring span { position: relative; font-size: 12px; font-weight: 700; color: var(--teal-900); text-align: center; line-height: 1.5; }
+  .pyramid { display: grid; gap: 4px; width: 100%; }
+  .pyramid div {
+    color: #fff; font-size: 11px; font-weight: 700; text-align: center; padding: 5px 4px; border-radius: 4px;
+  }
+  .pyramid .p1 { background: var(--pink); width: 56%; margin: 0 auto; }
+  .pyramid .p2 { background: var(--teal-400); width: 74%; margin: 0 auto; }
+  .pyramid .p3 { background: var(--teal); width: 92%; margin: 0 auto; }
+  .pyramid .p4 { background: var(--teal-700); width: 100%; }
 
-  /* 最新の一次情報 */
-  .info-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
-  .info-col {
-    background: var(--paper); border: 1px solid var(--ink-100); border-radius: var(--radius);
-    padding: 26px 26px 20px; box-shadow: var(--shadow);
+  /* 2 両利き */
+  .ambi { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: auto; }
+  .ambi .cell {
+    border: 1px solid var(--line); border-radius: 10px; padding: 14px 10px; text-align: center;
+    font-weight: 700; font-size: 13.5px; color: var(--teal-900); background: var(--sand);
   }
-  .info-col > .h {
-    display: flex; align-items: center; justify-content: space-between;
-    margin-bottom: 16px; padding-bottom: 14px; border-bottom: 1px solid var(--ink-100);
-  }
-  .info-col .h span { font-weight: 700; font-size: 15px; color: var(--green-800); }
-  .info-col .h a { font-size: 12px; color: var(--green-500); font-weight: 700; }
-  .feed { list-style: none; display: grid; gap: 14px; }
-  .feed li a { display: block; }
-  .feed .date { font-size: 11.5px; color: var(--ink-500); font-weight: 600; letter-spacing: .04em; }
-  .feed .cat {
-    display: inline-block; font-size: 10.5px; font-weight: 700; color: var(--green-600);
-    background: var(--green-50); border-radius: 4px; padding: 1px 7px; margin-left: 8px;
-  }
-  .feed .ttl { font-size: 14px; color: var(--ink-800); line-height: 1.6; margin-top: 3px; transition: color .15s; }
-  .feed li a:hover .ttl { color: var(--green-600); }
-
-  /* FAQ */
-  .faq { max-width: 820px; }
-  .faq-item {
-    border: 1px solid var(--ink-100); border-radius: 12px; background: var(--paper);
-    margin-bottom: 14px; overflow: hidden;
-  }
-  .faq-item summary {
-    cursor: pointer; list-style: none; padding: 22px 26px; display: flex; gap: 16px; align-items: flex-start;
-    font-weight: 700; font-size: 17px; color: var(--green-900);
-  }
-  .faq-item summary::-webkit-details-marker { display: none; }
-  .faq-item summary .q { color: var(--green-400); font-family: var(--font-serif); font-weight: 700; flex: none; }
-  .faq-item summary .plus { margin-left: auto; color: var(--green-400); font-size: 22px; transition: transform .2s; flex: none; }
-  .faq-item[open] summary .plus { transform: rotate(45deg); }
-  .faq-body { padding: 0 26px 24px 62px; font-size: 15px; color: var(--ink-700); line-height: 1.95; }
-
-  /* CTA band */
-  .cta-band {
-    background: linear-gradient(150deg, var(--green-700), var(--green-900));
-    color: #eaf5ee; text-align: center; padding: 72px 24px; border-radius: 0;
-  }
-  .cta-band h2 { font-family: var(--font-serif); font-size: clamp(24px, 3.4vw, 34px); font-weight: 700; margin-bottom: 16px; color: #fff; }
-  .cta-band p { font-size: 16px; color: #c9e6d3; max-width: 34em; margin: 0 auto 30px; }
-  .cta-band .btn-primary { background: var(--lime); color: var(--green-900); }
-  .cta-band .btn-primary:hover { background: #8fce55; }
-
-  /* Footer */
-  footer { background: var(--ink-900); color: #c3cec8; padding: 60px 0 30px; }
-  .foot-top { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 32px; }
-  .foot-brand .brand-name { color: #fff; }
-  .foot-brand p { font-size: 13.5px; color: #8f9c95; margin-top: 16px; line-height: 1.8; max-width: 26em; }
-  .foot-col h4 { font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: #6fc492; margin-bottom: 16px; font-weight: 700; }
-  .foot-col a { display: block; font-size: 14px; color: #c3cec8; margin-bottom: 11px; transition: color .15s; }
-  .foot-col a:hover { color: #fff; }
-  .foot-bottom {
-    margin-top: 48px; padding-top: 24px; border-top: 1px solid #26302b;
-    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px;
-    font-size: 12.5px; color: #7a877f;
+  .ambi .cell small { display: block; font-size: 10px; color: var(--ink-500); font-weight: 700; margin-top: 4px; letter-spacing: .04em; }
+  .ambi .core {
+    grid-column: 1 / -1; background: linear-gradient(135deg, var(--teal-50), var(--pink-50));
+    border: 1px dashed var(--teal-400); color: var(--teal-700); font-size: 12px;
   }
 
-  /* Responsive */
+  /* 3 5F */
+  .fivef { display: grid; gap: 7px; margin-top: auto; }
+  .fivef .row { display: flex; align-items: center; gap: 12px; }
+  .fivef .en {
+    flex: none; width: 92px; font-family: var(--font-en); font-weight: 600; font-size: 20px;
+    color: var(--teal-900); letter-spacing: .02em;
+  }
+  .fivef .bar { height: 10px; border-radius: 999px; background: linear-gradient(90deg, var(--teal), var(--pink)); }
+  .fivef .jp { font-size: 11.5px; color: var(--ink-500); white-space: nowrap; }
+  .fivef .axis { font-size: 10.5px; color: var(--ink-300); text-align: right; margin-top: 4px; letter-spacing: .08em; }
+
+  /* 関連サイトボタン */
+  .related { margin-top: 44px; }
+  .related .label { text-align: center; font-size: 13px; font-weight: 700; color: var(--ink-500); margin-bottom: 18px; }
+  .related-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+  .rbtn {
+    background: var(--paper); border: 1px solid var(--line); border-radius: 999px;
+    padding: 16px 20px; text-align: center; box-shadow: var(--shadow);
+    display: flex; flex-direction: column; gap: 3px; transition: transform .14s, border-color .14s;
+  }
+  .rbtn:hover { transform: translateY(-2px); border-color: var(--teal-400); }
+  .rbtn small { font-size: 9.5px; font-weight: 700; letter-spacing: .1em; color: var(--pink); }
+  .rbtn b { font-size: 14px; font-weight: 700; color: var(--teal-900); }
+
+  /* ───────────── 数字で見る ───────────── */
+  .stat-head { display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap; margin-bottom: 26px; }
+  .stat-head h2 { font-family: var(--font-serif); font-weight: 700; font-size: clamp(22px, 3vw, 30px); color: var(--teal-900); }
+  .stat-head .asof { font-size: 12px; color: var(--ink-500); }
+  .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-bottom: 54px; }
+  .stat {
+    background: var(--paper); border: 1px solid var(--line); border-radius: 16px; padding: 28px 26px;
+    box-shadow: var(--shadow);
+  }
+  .stat .cap { font-size: 13px; font-weight: 700; color: var(--teal-700); margin-bottom: 8px; }
+  .stat .big {
+    font-family: var(--font-serif); font-weight: 700; color: var(--teal-900); line-height: 1;
+    font-size: clamp(40px, 6vw, 60px); font-variant-numeric: tabular-nums;
+  }
+  .stat .big .u { font-size: .42em; color: var(--pink-600); margin-left: 4px; }
+  .stat .note { font-size: 12px; color: var(--ink-500); margin-top: 12px; line-height: 1.7; }
+  .stat.research .big { color: var(--pink-600); }
+  .stat.research .cap { color: var(--pink-600); }
+
+  /* ───────────── CTA 2バンド ───────────── */
+  .cta2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+  .cta-ir, .cta-st {
+    padding: 64px 48px; display: flex; flex-direction: column; justify-content: center; gap: 14px; min-height: 240px;
+  }
+  .cta-ir { background: var(--teal-50); }
+  .cta-ir h3 { font-family: var(--font-serif); font-weight: 700; font-size: clamp(20px, 2.6vw, 28px); color: var(--teal-900); }
+  .cta-st { background: linear-gradient(145deg, var(--pink-50), var(--teal-50)); }
+  .cta-st h3 { font-family: var(--font-serif); font-weight: 700; font-size: clamp(18px, 2.4vw, 24px); color: var(--pink-600); line-height: 1.6; }
+  .cta-st .brandline { font-family: var(--font-en); font-weight: 600; font-size: clamp(26px, 4vw, 40px); color: var(--teal-700); margin-top: 4px; }
+  .cta2 .go {
+    align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 700;
+    color: var(--teal-900); border-bottom: 2px solid var(--pink); padding-bottom: 3px; transition: gap .15s;
+  }
+  .cta2 .go:hover { gap: 14px; }
+
+  /* ───────────── Footer ───────────── */
+  footer { background: var(--sand); border-top: 1px solid var(--line); padding-block: 48px 30px; }
+  .foot-top { display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; padding-bottom: 28px; border-bottom: 1px solid var(--line); }
+  .foot-brand { display: flex; align-items: center; gap: 16px; }
+  .foot-brand .logo b { font-weight: 900; font-size: 22px; letter-spacing: .04em; color: var(--teal-700); }
+  .foot-brand .inf { color: var(--pink); font-weight: 900; }
+  .foot-brand .co { font-size: 14px; font-weight: 700; color: var(--ink-700); border-left: 1px solid var(--line); padding-left: 16px; }
+  .foot-first { font-family: var(--font-en); font-weight: 600; font-size: clamp(22px, 3vw, 30px); color: var(--teal-700); }
+  .foot-links { display: flex; flex-wrap: wrap; gap: 8px 22px; margin: 24px 0; }
+  .foot-links a { font-size: 13px; color: var(--ink-500); transition: color .15s; }
+  .foot-links a:hover { color: var(--teal-700); }
+  .copy { font-size: 11px; color: var(--ink-300); letter-spacing: .06em; }
+
+  /* ───────────── Responsive ───────────── */
   @media (max-width: 900px) {
-    .nav-links { display: none; }
+    .main-nav { display: none; }
     .menu-btn { display: block; }
-    .flow { grid-template-columns: repeat(2, 1fr); }
-    .flow-step:not(:last-child)::after { display: none; }
-    .definition { grid-template-columns: 1fr; gap: 32px; }
-    .steps { grid-template-columns: 1fr; }
-    .domains { grid-template-columns: 1fr; }
-    .info-grid { grid-template-columns: 1fr; }
-    .foot-top { grid-template-columns: 1fr 1fr; }
+    .message { grid-template-columns: 1fr; }
+    .message .photo { border-radius: 18px 18px 0 0; min-height: 260px; }
+    .message .panel { border-radius: 0 0 18px 18px; }
+    .strategy { grid-template-columns: 1fr; }
+    .related-grid { grid-template-columns: repeat(2, 1fr); }
+    .stats { grid-template-columns: 1fr; }
+    .cta2 { grid-template-columns: 1fr; }
   }
-  @media (max-width: 520px) {
-    .flow { grid-template-columns: 1fr; }
-    .foot-top { grid-template-columns: 1fr; }
-    .hero-inner { padding: 62px 24px 54px; }
+  @media (max-width: 560px) {
+    .util .wrap { gap: 12px; }
+    .notice .wrap { flex-direction: column; align-items: flex-start; gap: 12px; }
+    .related-grid { grid-template-columns: 1fr; }
+    .cta-ir, .cta-st { padding: 48px 28px; }
   }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
 </style>
 </head>
 <body>
 
 <!-- ═══════════ Header ═══════════ -->
 <header>
-  <nav class="nav">
-    <a class="brand" href="#top">
-      <span class="brand-mark"></span>
-      <span class="brand-name">euglena<span>.</span></span>
-    </a>
-    <div class="nav-links">
-      <a href="#about">私たちは何の会社か</a>
-      <a href="#howwegrow">事業の増え方</a>
-      <a href="#domains">4つの実装領域</a>
-      <a href="#news">最新情報</a>
-      <a href="#faq">FAQ</a>
-      <a class="nav-cta" href="#contact">お問い合わせ</a>
+  <div class="util">
+    <div class="wrap">
+      <a href="#about">ユーグレナって？</a>
+      <a href="#strategy">サステナビリティ</a>
+      <a href="#">JP / EN</a>
+      <a class="shop" href="#">🛒 公式通販</a>
     </div>
-    <button class="menu-btn" aria-label="メニュー">☰</button>
+  </div>
+  <nav class="nav wrap">
+    <a class="brand" href="#top" aria-label="ユーグレナ ホーム">
+      <span class="logo"><b>ユーグレナ</b><span class="inf">∞</span></span>
+      <span class="tag">いきる。たのしむ。<br>サステナブる。</span>
+    </a>
+    <div class="main-nav">
+      <a href="#strategy">事業</a>
+      <a href="#research">研究</a>
+      <a href="#message">企業</a>
+      <a href="#notice">ニュース</a>
+      <a href="#ir">IR情報</a>
+      <a href="#">採用</a>
+      <a class="nav-cta" href="#ir">お問い合わせ</a>
+    </div>
+    <button class="menu-btn" aria-label="メニューを開く">☰</button>
   </nav>
 </header>
 
@@ -331,244 +381,204 @@
 <!-- ═══════════ Hero ═══════════ -->
 <div class="hero">
   <div class="hero-inner">
-    <span class="eyebrow">Algae Science Manufacturer</span>
-    <h1>微細藻類から、<br><span class="hl">人と地球の健康</span>を実装する。</h1>
-    <p class="hero-sub">
-      研究を起点に、ヘルスケア・エネルギー・アグリへ。<br>
-      展開原理が一つで、用途が複数あるだけ。
-    </p>
-    <div class="hero-actions">
-      <a class="btn btn-primary" href="#about">私たちは何の会社か →</a>
-      <a class="btn btn-ghost" href="#howwegrow">事業の増え方を知る</a>
+    <div class="hero-head" role="heading" aria-level="1" aria-label="微細藻類から、人と地球の健康を実装する。">
+      <span class="layer pink" aria-hidden="true">微細藻類から、<br>人と地球の健康<br>健康実装する。</span>
+      <span class="layer teal">微細藻類から、<br>人と地球の健康<br>健康実装する。</span>
+      <svg class="hero-tube" viewBox="0 0 80 220" aria-hidden="true">
+        <defs>
+          <linearGradient id="liq" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#7bd27a"/><stop offset="1" stop-color="#119b84"/>
+          </linearGradient>
+        </defs>
+        <rect x="22" y="2" width="36" height="14" rx="4" fill="#cfe8e1"/>
+        <path d="M26 16 h28 v168 a14 14 0 0 1-28 0 Z" fill="#ffffff" stroke="#bcd9d1" stroke-width="2"/>
+        <path d="M28 96 h24 v88 a12 12 0 0 1-24 0 Z" fill="url(#liq)"/>
+        <ellipse cx="40" cy="96" rx="12" ry="4" fill="#9ad9a0"/>
+        <circle cx="36" cy="150" r="3" fill="#ffffff" opacity=".5"/>
+        <circle cx="44" cy="170" r="2" fill="#ffffff" opacity=".5"/>
+      </svg>
     </div>
 
-    <!-- DESTINATION 図式要約 -->
-    <div class="destination">
-      <div class="destination-label">DESTINATION ─ 私たちの到達点</div>
-      <div class="flow">
-        <div class="flow-step">
-          <div class="n">01</div>
-          <div class="t">研究</div>
-          <div class="d">微細藻類の生物資源としての可能性を解き明かす。</div>
-        </div>
-        <div class="flow-step">
-          <div class="n">02</div>
-          <div class="t">社会実装</div>
-          <div class="d">研究成果を製品・サービスとして社会に届ける。</div>
-        </div>
-        <div class="flow-step">
-          <div class="n">03</div>
-          <div class="t">ブレイクイーブン</div>
-          <div class="d">各事業を自立採算に乗せ、次の投資原資を生む。</div>
-        </div>
-        <div class="flow-step">
-          <div class="n">04</div>
-          <div class="t">アライアンス</div>
-          <div class="d">パートナーと組み、実装の速度と規模を拡げる。</div>
-        </div>
-        <div class="flow-step">
-          <div class="n">05</div>
-          <div class="t">藻類科学メーカー</div>
-          <div class="d">藻類科学を核に、人と地球の健康を実装し続ける。</div>
-        </div>
-      </div>
-    </div>
+    <p class="hero-lead">
+      2005年、私たちは世界で初めて、微細藻類ユーグレナ（和名：ミドリムシ）の食用屋外大量培養に成功しました。
+      不可能と言われた挑戦から生まれた技術は、いま食と健康、エネルギー、環境へと広がっています。
+      ヘルスケアからバイオ燃料まで、微細藻類を軸に、社会課題の解決に取り組み続けています。
+      人と地球の健康を、研究室の中だけでなく、暮らしの中に実装していく。それがユーグレナです。
+    </p>
   </div>
 </div>
 
-<!-- ═══════════ 1. 私たちは何の会社か ═══════════ -->
-<section id="about">
+<!-- ═══════════ 重要なお知らせ ═══════════ -->
+<div class="notice" id="notice">
   <div class="wrap">
-    <div class="section-head">
-      <div class="section-kicker">What we are</div>
-      <h2 class="section-title">私たちは何の会社か</h2>
+    <span class="badge">重要なお知らせ</span>
+    <ul>
+      <li><span class="d">2025.12.18</span><a href="#">年末年始の営業・お問い合わせ対応期間についてのご案内</a></li>
+      <li><span class="d">2025.12.05</span><a href="#">バイオ燃料「サステオ」の供給実績が130件を突破しました</a></li>
+      <li><span class="d">2025.11.20</span><a href="#">「GENKIプログラム」累計配布数 2,000万食達成のご報告</a></li>
+    </ul>
+  </div>
+</div>
+
+<!-- ═══════════ トップメッセージ ═══════════ -->
+<section id="message">
+  <div class="wrap">
+    <div class="sec-head" style="text-align:center">
+      <span class="kicker">Top Message</span>
     </div>
-    <div class="definition">
-      <div>
-        <p class="def-statement">
-          ユーグレナは、<em>微細藻類という単一の生物資源</em>を起点に、<br>
-          人と地球の健康を実装する<em>藻類科学メーカー</em>です。
+    <div class="message">
+      <div class="photo">
+        <span class="ph-tag">代表メッセージ</span>
+        <svg class="figure" viewBox="0 0 200 180" aria-label="代表者イメージ">
+          <rect width="200" height="180" fill="none"/>
+          <circle cx="100" cy="66" r="34" fill="#fff" opacity=".9"/>
+          <path d="M44 180 q0-52 56-52 t56 52 Z" fill="#fff" opacity=".9"/>
+          <rect x="92" y="120" width="16" height="30" fill="#119b84"/>
+          <path d="M84 118 l16 10 16-10 v12 l-16 8-16-8 Z" fill="#0d7a68"/>
+        </svg>
+      </div>
+      <div class="panel">
+        <span class="bubble">トップメッセージ<small>TOP MESSAGE</small></span>
+        <p>
+          「サイエンスの力で、人と地球を健康にする。」——創業時に掲げたこの想いは、20年を経たいまも私たちの原動力です。
+          微細藻類という小さな生命の可能性を信じ、研究室の発見を社会の実装へとつなげてきました。
+          これからも、未来世代のために持続可能な成長を追求し続けます。
         </p>
-        <p class="def-body">
-          「何の会社か分からない」——複数の事業を持つ私たちは、よくそう言われます。
-          答えはシンプルです。私たちは<strong>いくつもの事業をやっている会社</strong>ではなく、
-          <strong>ひとつの生物資源を、いくつもの用途に展開している会社</strong>です。
-          起点はいつも微細藻類。そこから生まれる価値を、食・エネルギー・農業という
-          異なる領域へ翻訳しているだけなのです。
-        </p>
-      </div>
-      <div class="def-card">
-        <h3>私たちを一文で表すと</h3>
-        <ul>
-          <li><span class="kicker">起点は一つ：</span>すべての事業が微細藻類の研究から始まる。</li>
-          <li><span class="kicker">用途は複数：</span>ヘルスケア・エネルギー・アグリへ展開する。</li>
-          <li><span class="kicker">目的は不変：</span>人と地球の健康を実装し続ける。</li>
-        </ul>
+        <p class="name">代表取締役社長 <b>出雲 充</b></p>
+        <a class="more" href="#">詳しくはこちら →</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════ 2. どうやって事業が増えるのか ═══════════ -->
-<section id="howwegrow" class="sand">
+<!-- ═══════════ 事業戦略 ═══════════ -->
+<section id="strategy" class="mist-bg">
   <div class="wrap">
-    <div class="section-head">
-      <div class="section-kicker">How we grow</div>
-      <h2 class="section-title">どうやって事業が増えるのか</h2>
-      <p class="section-lead">
-        事業は思いつきで増えるのではありません。ひとつの研究成果が事業になり、
-        その事業で得た知見と資源が、次の事業を生む。同じ原理が繰り返されているだけです。
-      </p>
+    <div class="sec-head" style="margin-bottom:0">
+      <h2 class="sec-title strategy-title">ユーグレナ事業戦略：持続可能な成長への道</h2>
     </div>
-    <div class="steps">
-      <div class="step">
-        <div class="step-num">1</div>
-        <h3>R&D（研究）</h3>
-        <p>微細藻類の成分・機能・生産技術を掘り下げる。すべての事業の種は、ここから生まれます。</p>
-        <span class="tag">起点 ─ 藻類科学</span>
-      </div>
-      <div class="step">
-        <div class="step-num">2</div>
-        <h3>事業化</h3>
-        <p>研究成果を製品・サービスに翻訳し、市場に届ける。採算化（ブレイクイーブン）まで育て切ります。</p>
-        <span class="tag">実装 ─ 社会実装 × 採算</span>
-      </div>
-      <div class="step">
-        <div class="step-num">3</div>
-        <h3>他事業への展開</h3>
-        <p>ひとつの事業で得た資源・技術・パートナーが、次の領域の事業化を加速する。展開が展開を呼びます。</p>
-        <span class="tag">拡張 ─ アライアンス</span>
-      </div>
-    </div>
-    <div class="cycle-note">
-      <strong>R&D → 事業化 → 他事業への展開</strong> ── この循環が回るほど、
-      ひとつの微細藻類から生まれる用途は増えていきます。
-    </div>
-  </div>
-</section>
+    <p class="strategy-sub">ひとつの微細藻類を起点に、循環・多角化・素材の最大活用で成長を描きます。</p>
 
-<!-- ═══════════ 3. 4つの実装領域 ═══════════ -->
-<section id="domains">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="section-kicker">Four domains</div>
-      <h2 class="section-title">4つの実装領域</h2>
-      <p class="section-lead">同じ微細藻類が、異なる社会課題に対して異なる姿で実装されています。</p>
-    </div>
-    <div class="domains">
-      <div class="domain">
-        <div class="ic">🌱</div>
-        <div class="en">Healthcare</div>
-        <h3>ヘルスケア</h3>
-        <p>微細藻類の栄養素・機能性成分を、食品・化粧品として人の健康に届ける。私たちの実装の原点です。</p>
-        <ul><li>機能性素材</li><li>食品</li><li>化粧品</li></ul>
-      </div>
-      <div class="domain">
-        <div class="ic">⛽</div>
-        <div class="en">Energy</div>
-        <h3>エネルギー</h3>
-        <p>藻類などを原料とするバイオ燃料で、輸送・航空の脱炭素に挑む。地球の健康への実装です。</p>
-        <ul><li>バイオ燃料</li><li>SAF</li><li>脱炭素</li></ul>
-      </div>
-      <div class="domain">
-        <div class="ic">🌾</div>
-        <div class="en">Agri</div>
-        <h3>アグリ</h3>
-        <p>藻類由来のバイオ肥料・農業資材で、持続可能な食料生産を支える。土と作物の健康へ。</p>
-        <ul><li>バイオ肥料</li><li>持続可能な農業</li><li>ソーシャルビジネス</li></ul>
-      </div>
-      <div class="domain">
-        <div class="ic">🔬</div>
-        <div class="en">R&D</div>
-        <h3>R&D</h3>
-        <p>すべての事業の源泉。藻類科学・バイオインフォマティクスを深め、次の実装領域を生み出し続けます。</p>
-        <ul><li>藻類科学</li><li>バイオインフォマティクス</li><li>生産技術</li></ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════ 4. 最新の一次情報 ═══════════ -->
-<section id="news" class="sand">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="section-kicker">Primary source</div>
-      <h2 class="section-title">最新の一次情報</h2>
-      <p class="section-lead">私たちが発信する、加工されていない一次情報です。ニュース・IR・研究/技術のアップデートを掲載します。</p>
-    </div>
-    <div class="info-grid">
-      <div class="info-col">
-        <div class="h"><span>ニュース</span><a href="#news">一覧 →</a></div>
-        <ul class="feed">
-          <li><a href="#news"><span class="date">2026.04.24</span><span class="cat">製品</span><div class="ttl">「緑のユーグレナ」×「金のユーグレナ」で機能性素材事業を強化</div></a></li>
-          <li><a href="#news"><span class="date">2026.03.12</span><span class="cat">エネルギー</span><div class="ttl">次世代バイオ燃料の実証プラント、稼働状況を公開</div></a></li>
-          <li><a href="#news"><span class="date">2026.02.05</span><span class="cat">アグリ</span><div class="ttl">藻類由来バイオ肥料の実地試験、収量データを更新</div></a></li>
-        </ul>
-      </div>
-      <div class="info-col">
-        <div class="h"><span>IR</span><a href="#news">一覧 →</a></div>
-        <ul class="feed">
-          <li><a href="#news"><span class="date">2026.05.14</span><span class="cat">決算</span><div class="ttl">2026年度 第1四半期 決算説明資料を掲載</div></a></li>
-          <li><a href="#news"><span class="date">2026.03.28</span><span class="cat">開示</span><div class="ttl">中期経営計画のアップデートに関するお知らせ</div></a></li>
-          <li><a href="#news"><span class="date">2026.02.20</span><span class="cat">株主</span><div class="ttl">定時株主総会 招集ご通知を公開</div></a></li>
-        </ul>
-      </div>
-      <div class="info-col">
-        <div class="h"><span>研究・技術</span><a href="#news">一覧 →</a></div>
-        <ul class="feed">
-          <li><a href="#news"><span class="date">2026.06.02</span><span class="cat">論文</span><div class="ttl">微細藻類の機能性成分に関する共同研究成果を発表</div></a></li>
-          <li><a href="#news"><span class="date">2026.04.18</span><span class="cat">技術</span><div class="ttl">培養生産プロセスの効率化に関する技術アップデート</div></a></li>
-          <li><a href="#news"><span class="date">2026.01.30</span><span class="cat">連携</span><div class="ttl">バイオインフォマティクス分野での産学連携を開始</div></a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════ 5. FAQ ═══════════ -->
-<section id="faq">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="section-kicker">FAQ</div>
-      <h2 class="section-title">よくある問い</h2>
-      <p class="section-lead">私たちが最もよく受け取る、3つの根本的な問いにお答えします。</p>
-    </div>
-    <div class="faq">
-      <details class="faq-item" open>
-        <summary><span class="q">Q.</span>なぜ複数の事業をやっているのか？<span class="plus">＋</span></summary>
-        <div class="faq-body">
-          複数の「事業」をやっているのではなく、ひとつの「生物資源」を複数の用途に展開しているからです。
-          起点はつねに微細藻類ひとつ。そこから生まれる価値を、ヘルスケア・エネルギー・アグリという
-          異なる社会課題へ翻訳した結果として、事業が複数に見えているだけなのです。
-          展開原理は一つ、用途が複数あるだけ、というのが私たちの実像です。
+    <div class="strategy">
+      <!-- 1 -->
+      <div class="scard">
+        <span class="no"><b>1</b>サイクルと成長</span>
+        <h3>研究開発と実装の循環</h3>
+        <p class="lead">成長の可視化と効率の追求。研究で生まれた価値を、食品原料からファインケミカル、燃料・飼料まで段階的に展開します。</p>
+        <div class="cycle">
+          <div class="ring"><span>R&amp;D<br>⇄<br>実装</span></div>
+          <div class="pyramid">
+            <div class="p1">ファインケミカル</div>
+            <div class="p2">食品原料</div>
+            <div class="p3">飼料・肥料原料</div>
+            <div class="p4">燃料原料</div>
+          </div>
         </div>
-      </details>
-      <details class="faq-item">
-        <summary><span class="q">Q.</span>エネルギー（バイオ燃料）はまだやっているのか？<span class="plus">＋</span></summary>
-        <div class="faq-body">
-          はい、継続しています。エネルギーは私たちにとって「地球の健康」を実装する中核領域であり、
-          微細藻類を起点とする展開の重要な一翼です。輸送・航空分野の脱炭素に向けたバイオ燃料の
-          開発・実証を進めており、社会実装と採算化（ブレイクイーブン）の両立を目指しています。
-          最新の稼働・進捗は「最新の一次情報」でご確認いただけます。
+      </div>
+      <!-- 2 -->
+      <div class="scard">
+        <span class="no"><b>2</b>両利きの経営と多角化</span>
+        <h3>微細藻類軸での深化と探索</h3>
+        <p class="lead">既存事業を深化させながら、新規事業を探索する。ひとつの生物資源を複数の社会課題へと翻訳します。</p>
+        <div class="ambi">
+          <div class="core">微細藻類軸 ─ すべての起点</div>
+          <div class="cell">ヘルスケア<small>深化 / 既存事業</small></div>
+          <div class="cell">バイオ燃料<small>深化 / 既存事業</small></div>
+          <div class="cell">エネルギー<small>探索 / 新規事業</small></div>
+          <div class="cell">アグリ<small>探索 / 新規事業</small></div>
         </div>
-      </details>
-      <details class="faq-item">
-        <summary><span class="q">Q.</span>R&Dと事業の関係は何か？<span class="plus">＋</span></summary>
-        <div class="faq-body">
-          R&Dはすべての事業の「起点」であり「源泉」です。私たちの事業は、R&D → 事業化 →
-          他事業への展開という循環で増えていきます。研究が新しい用途を生み、事業がその研究を支える資源を返す。
-          R&Dは独立した部門ではなく、4つの実装領域すべてに血液のように流れている——それが私たちの事業構造です。
+      </div>
+      <!-- 3 -->
+      <div class="scard">
+        <span class="no"><b>3</b>素材の最大活用</span>
+        <h3>「バイオマスの5F」戦略</h3>
+        <p class="lead">ユーグレナ由来の素材を余すことなく活用。付加価値の高い用途から順に、5つのFへ展開します。</p>
+        <div class="fivef">
+          <div class="row"><span class="en">Food</span><span class="bar" style="flex:1"></span><span class="jp">食品原料</span></div>
+          <div class="row"><span class="en">Fiber</span><span class="bar" style="flex:.86"></span><span class="jp">化粧品・繊維</span></div>
+          <div class="row"><span class="en">Feed</span><span class="bar" style="flex:.72"></span><span class="jp">飼料</span></div>
+          <div class="row"><span class="en">Fertilizer</span><span class="bar" style="flex:.58"></span><span class="jp">肥料</span></div>
+          <div class="row"><span class="en">Fuel</span><span class="bar" style="flex:.44"></span><span class="jp">バイオ燃料</span></div>
+          <div class="axis">付加価値：高 ← → 量：大</div>
         </div>
-      </details>
+      </div>
+    </div>
+
+    <!-- 関連サイト -->
+    <div class="related">
+      <p class="label">詳しくはこちら</p>
+      <div class="related-grid">
+        <a class="rbtn" href="#"><small>ヘルスケアカンパニー</small><b>健康 ip</b></a>
+        <a class="rbtn" href="#"><small>サステナビリティ</small><b>サステナサイト</b></a>
+        <a class="rbtn" href="#"><small>アグリカンパニー</small><b>いきものたちにユーグレナ</b></a>
+        <a class="rbtn" href="#"><small>R&amp;D</small><b>ヘルスケア・ラボ</b></a>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════ CTA ═══════════ -->
-<div id="contact" class="cta-band">
-  <h2>微細藻類の可能性を、一緒に実装しませんか。</h2>
-  <p>共同研究・事業提携・投資・採用など、私たちとの接点はさまざまな形でひらかれています。</p>
-  <a class="btn btn-primary" href="#contact">お問い合わせ →</a>
+<!-- ═══════════ 数字で見る / 研究 ═══════════ -->
+<section id="research">
+  <div class="wrap">
+    <div class="stat-head">
+      <span class="kicker" style="margin:0">By the numbers</span>
+      <h2>数字でみるユーグレナ</h2>
+      <span class="asof">2025年12月末時点データ</span>
+    </div>
+    <div class="stats">
+      <div class="stat">
+        <div class="cap">バイオ燃料供給実績</div>
+        <div class="big">130<span class="u">件以上</span></div>
+        <p class="note">バイオ燃料「サステオ」の累計供給実績。50事業者を超えるパートナーへ供給しています。</p>
+      </div>
+      <div class="stat">
+        <div class="cap">GENKIプログラム</div>
+        <div class="big">2,000<span class="u">万食以上</span></div>
+        <p class="note">子どもたちへユーグレナ入りクッキーを届ける社会貢献活動。累計配布数2,000万食を達成。</p>
+      </div>
+      <div class="stat">
+        <div class="cap">株主数</div>
+        <div class="big">11<span class="u">万人以上</span></div>
+        <p class="note">株主優待や従業員向けの取り組みも充実。11万人を超える株主に支えられています。</p>
+      </div>
+    </div>
+
+    <div class="stat-head">
+      <span class="kicker" style="margin:0">Research</span>
+      <h2>ユーグレナの研究</h2>
+    </div>
+    <div class="stats">
+      <div class="stat research">
+        <div class="cap">世界初の大量培養</div>
+        <div class="big">2005<span class="u">年</span></div>
+        <p class="note">微細藻類ユーグレナの食用屋外大量培養に、世界で初めて成功した年。</p>
+      </div>
+      <div class="stat research">
+        <div class="cap">培養技術の実績</div>
+        <div class="big">20<span class="u">年</span></div>
+        <p class="note">安定的かつ効率的な培養技術を、20年にわたり磨き続けてきました。</p>
+      </div>
+      <div class="stat research">
+        <div class="cap">食品用ユーグレナ生産拠点</div>
+        <div class="big" style="font-size:clamp(32px,5vw,50px)">石垣島</div>
+        <p class="note">豊かな自然に恵まれた沖縄・石垣島で、食品用ユーグレナを生産しています。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ CTA 2バンド ═══════════ -->
+<div class="cta2" id="ir">
+  <div class="cta-ir">
+    <h3>IRに関する情報はこちら</h3>
+    <p style="font-size:14px;color:var(--ink-500)">投資家・株主のみなさまへ。決算情報、中期経営計画、株主還元の方針などを公開しています。</p>
+    <a class="go" href="#">IR情報を見る →</a>
+  </div>
+  <div class="cta-st">
+    <h3>ユーグレナの“リアル”を<br>知りたい方はこちら</h3>
+    <span class="brandline">Sustainable Times</span>
+    <a class="go" href="#">サステナブル・タイムズへ →</a>
+  </div>
 </div>
 
 <!-- ═══════════ Footer ═══════════ -->
@@ -576,43 +586,29 @@
   <div class="wrap">
     <div class="foot-top">
       <div class="foot-brand">
-        <a class="brand" href="#top">
-          <span class="brand-mark"></span>
-          <span class="brand-name">euglena<span>.</span></span>
-        </a>
-        <p>微細藻類という単一の生物資源を起点に、人と地球の健康を実装する藻類科学メーカー。</p>
+        <span class="logo"><b>ユーグレナ</b><span class="inf">∞</span></span>
+        <span class="co">株式会社ユーグレナ</span>
       </div>
-      <div class="foot-col">
-        <h4>会社を知る</h4>
-        <a href="#about">私たちは何の会社か</a>
-        <a href="#howwegrow">事業の増え方</a>
-        <a href="#domains">4つの実装領域</a>
-      </div>
-      <div class="foot-col">
-        <h4>情報</h4>
-        <a href="#news">ニュース</a>
-        <a href="#news">IR情報</a>
-        <a href="#news">研究・技術</a>
-        <a href="#faq">FAQ</a>
-      </div>
-      <div class="foot-col">
-        <h4>つながる</h4>
-        <a href="#contact">お問い合わせ</a>
-        <a href="#contact">採用</a>
-        <a href="#contact">パートナーシップ</a>
-      </div>
+      <span class="foot-first">Sustainability First</span>
     </div>
-    <div class="foot-bottom">
-      <span>© 2026 Euglena Co., Ltd. — リニューアル デザイン案（簡易版）</span>
-      <span>Algae Science Manufacturer</span>
-    </div>
+    <nav class="foot-links" aria-label="フッターナビ">
+      <a href="#strategy">事業</a>
+      <a href="#research">研究</a>
+      <a href="#message">企業情報</a>
+      <a href="#notice">ニュース</a>
+      <a href="#ir">IR情報</a>
+      <a href="#">採用</a>
+      <a href="#">サステナビリティ</a>
+      <a href="#">お問い合わせ</a>
+    </nav>
+    <p class="copy">COPYRIGHT © Euglena Co., Ltd. ALL RIGHTS RESERVED.　｜　本サイトはPDF構成案をもとに制作したデモサイトです。</p>
   </div>
 </footer>
 
 <script>
-  // モバイルメニュー：簡易トグル（アンカーへスクロールするだけの簡易実装）
+  // モバイル簡易メニュー：主要セクションへスクロール
   document.querySelector('.menu-btn')?.addEventListener('click', function () {
-    document.querySelector('#about')?.scrollIntoView({ behavior: 'smooth' });
+    document.querySelector('#strategy')?.scrollIntoView({ behavior: 'smooth' });
   });
 </script>
 </body>
